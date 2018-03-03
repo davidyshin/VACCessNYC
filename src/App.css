@@ -115,38 +115,44 @@ body {
 }
 
 /* Pharmacy list */
-.list-container {
-    width: 380px;
+.location-list {
+    display:flex;
+    flex-direction: column;
+    width: 30%;
+    overflow: scroll;
+    height: 100%;
     margin: 0 auto;
+}
+
+.pharm-list {
+    padding: 0;
+    margin: 0;
+}
+
+.pharm-list h3 {
+    padding-left: 10px;
 }
 
 .pharm-header {
     background-color: rgb(32, 129, 129);
     color: white;
-    padding: 10px;
+    height: 50px;
     font-size: 1.5em;
     width: 100%;
     margin: 0 auto;
 }
 
-.pharm-list-div {
-    background-color: rgb(225, 236, 236);
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px;
-}
 
 .pharm-list-info, .pharm-list {
     list-style-type: none;
     text-align: left;
 }
 
+.pharm-list-item{
+    border-bottom: solid 1px rgb(32, 129, 129);
+
+}
+
 .italics {
     font-style: italic;
-}
-/* List of Location */
-.location-list {
-  display: flex;
-  width: 30%;
-  overflow: scroll;
 }
