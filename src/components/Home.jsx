@@ -65,8 +65,12 @@ class Home extends React.Component {
     if (this.state.displayResult) {
       return (
         <div className="results-page-container">
+          <div className="map-container">
           <Map data={data} handleSelect={this.handleSelect}/>
+          </div>
+          <div className="list-container">
           <List data={data} id={this.state.selectedId}/>
+          </div>
         </div>
       );
     } else {
