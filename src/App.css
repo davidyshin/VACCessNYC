@@ -18,6 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    height: 100%;
 }
 
 /* Header of the app: includes the banner of the app */
@@ -28,6 +29,7 @@ body {
   justify-content: center;
   align-items: center;
   align-content: flex-end;
+  height: 15%;
 }
 
 .App-title {
@@ -91,9 +93,14 @@ body {
 }
 
 /* Map container: pin, affect of pin when hovered */
+.map-page {
+  display: flex;
+  height: 600px;
+  flex-direction: row-reverse;
+}
+
 .map-container {
-    height: 400px;
-    width: 100%;
+    flex: auto;
 }
 
 .map-pin {
@@ -105,4 +112,10 @@ body {
 .map-pin:hover {
   cursor: pointer;
   transform: scale(1.50);
+}
+
+/* List of Location */
+.location-list {
+  display: flex;
+  width: 30%;
 }

@@ -43,7 +43,7 @@ class Map extends React.Component {
     const { data } = this.state;
     return (
       // Google Maps Container
-      <div>
+      <div className="map-page">
         <div className="map-container">
           <GoogleMapReact
             bootstrapURLKeys={{
@@ -55,6 +55,9 @@ class Map extends React.Component {
             {/*Map pins according to data here*/}
             {data.map(this.renderPin)}
           </GoogleMapReact>
+        </div>
+        <div className="location-list">
+        
         </div>
       </div>
     );
