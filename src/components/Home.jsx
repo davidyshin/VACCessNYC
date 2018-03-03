@@ -30,7 +30,7 @@ class Home extends React.Component {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="search-tool">
           <input
             className="home-search"
             type="search"
