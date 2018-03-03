@@ -118,4 +118,5 @@ body {
 .location-list {
   display: flex;
   width: 30%;
+  overflow: scroll;
 }
