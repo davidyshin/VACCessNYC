@@ -29,7 +29,8 @@ class Home extends React.Component {
     console.log(this.state);
 
     return (
-      <div>
+      <div id="Homepage">
+        <h2 className="search-question" >Where would you like to get vaccinated in NYC?</h2>
         <form onSubmit={this.handleSubmit} className="search-tool">
           <input
             className="home-search"
