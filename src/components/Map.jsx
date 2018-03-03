@@ -10,9 +10,11 @@ class Map extends React.Component {
     this.state = {
       center: { lat: 40.737975, lng: -73.8801301 },
       zoom: 12,
-      data: []
+      data: [],
+      id: ""
     };
   }
+
   // pins to render on map
   mapPin = ({ id, onClick }) => {
     return (
@@ -24,7 +26,7 @@ class Map extends React.Component {
     return (
       <this.mapPin
         id={pin.facility_name}
-        onClick={this.showName}
+        onClick={console.log("Placeholder")}
         lat={pin.location.coordinates[1].toString()}
         lng={pin.location.coordinates[0].toString()}
         image={needle}

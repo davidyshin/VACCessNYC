@@ -101,6 +101,7 @@ body {
 
 .map-container {
     flex: auto;
+    overflow: hidden;
 }
 
 .map-pin {
@@ -119,7 +120,7 @@ body {
     display:flex;
     flex-direction: column;
     width: 30%;
-    overflow: scroll;
+    overflow: auto;
     height: 100%;
     margin: 0 auto;
 }
