@@ -10,7 +10,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to VACCess NYC</h1>
         </header>
-        <Home />
+        <Map />
       </div>
     );
   }
