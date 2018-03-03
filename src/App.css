@@ -114,6 +114,36 @@ body {
   transform: scale(1.50);
 }
 
+/* Pharmacy list */
+.list-container {
+    width: 380px;
+    margin: 0 auto;
+}
+
+.pharm-header {
+    background-color: rgb(32, 129, 129);
+    color: white;
+    padding: 10px;
+    font-size: 1.5em;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.pharm-list-div {
+    background-color: rgb(225, 236, 236);
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.pharm-list-info, .pharm-list {
+    list-style-type: none;
+    text-align: left;
+}
+
+.italics {
+    font-style: italic;
+  
 /* List of Location */
 .location-list {
   display: flex;
