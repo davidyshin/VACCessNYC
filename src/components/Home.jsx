@@ -13,14 +13,16 @@ class Home extends React.Component {
 
   render() {
     return (
-        <form onSubmit={this.handleSubmit}>
+      <div>
+        <form onSubmit={this.handleSubmit} className="search-tool">
       <input
         className="home-search"
         type="search"
         placeholder="All of NYC or Enter a Zip Code"
       />
-      <button className="home-submit" type="submit"> </button>
+      <button className="home-submit" type="submit"> Search </button>
       </form>
+      </div>
     );
   }
 }
