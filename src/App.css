@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+.map-pin {
+  position: relative;
+  height: 60;
+  width: 60;
+}
+
+.map-pin:hover {
+  cursor: pointer;
+  transform: scale(1.50);
+}
+
+.home-search {
+  -webkit-appearance: none;
+  width: 350px;
+  height: 30px;
+  text-align: center;
+}
+
+.home-button {
+  width: 50px;
+  height: 30px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.map-container {
+  height: 400px;
+  width: 100%;
+}
+
