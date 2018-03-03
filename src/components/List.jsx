@@ -6,7 +6,8 @@ class List extends React.Component {
     this.state = {};
   }
   componentWillReceiveProps(nextProps) {
-    if (this.props.selectedId !== nextProps.selectedId) {
+    if (this.props.id !== nextProps.id) {
+        console.log("Condition Satisfied")
       document.getElementById(nextProps.id).scrollIntoView();
     }
   }

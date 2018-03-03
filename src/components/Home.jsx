@@ -20,29 +20,30 @@ class Home extends React.Component {
     };
   }
 
+  selectId = e => {
+    this.setState({ id: e.target.id });
+  };
   handleSubmit = e => {
     e.preventDefault();
     axios
       .get("https://data.cityofnewyork.us/resource/inaf-e6a5.json")
       .then(res => {
-        this.setState({ data: res.data });
+        this.setState({ data: res.data});
       });
-    if (this.state.data.length > 0) {
-      this.setState({ displayResult: true });
-    }
   };
 
   handleZipCode = e => {
     e.preventDefault();
     axios
-      .get(`https://data.cityofnewyork.us/resource/inaf-e6a5.json?zip_code=${this.state.zip}`)
+      .get(
+        `https://data.cityofnewyork.us/resource/inaf-e6a5.json?zip_code=${
+          this.state.zip
+        }`
+      )
       .then(res => {
-        this.setState({ data: res.data })
-      })
-      if (this.state.data.length > 0) {
-        this.setState({ displayResult: true });
-      }
-  }
+        this.setState({ data: res.data});
+      });
+  };
 
   handleInput = e => {
     this.setState({
@@ -57,12 +58,12 @@ class Home extends React.Component {
     const { data } = this.state;
     const { zip, message } = this.state;
     const buttonText = zip ? "Search" : "See all pharmacies";
-    
-    if (this.state.displayResult) {
+
+    if (this.state.data.length > 0) {
       return (
         <div className="map-page">
-          <Map data={data} />
-          <List data={data} />
+          <Map selectId={this.selectId} data={data} />
+          <List id={this.state.id} data={data} />
         </div>
       );
     } else {
@@ -83,7 +84,6 @@ class Home extends React.Component {
     console.log(this.state);
 
     return (
-
       <div>
         <this.DisplayResultPage />
       </div>
