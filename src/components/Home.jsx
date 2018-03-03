@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Map from "./Map.jsx"
 
 import validZips from "./validZips";
 
@@ -13,7 +14,6 @@ class Home extends React.Component {
   }
 
   handleSubmit = e => {};
-
   handleSearchInput = e => {
     this.setState({
       zip: e.target.value,
