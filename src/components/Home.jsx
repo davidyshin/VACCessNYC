@@ -14,12 +14,16 @@ class Home extends React.Component {
     this.state = {
       zip: "",
       message: "",
+      selectedId: "",
       displayResult: false,
       data: [],
       zipCoords: []
     };
   }
-
+  handleSelect = e => {
+    this.setState({selectedId: e.target.id})
+    console.log("hello")
+  }
   handleSubmit = e => {
     e.preventDefault();
     axios
@@ -61,8 +65,8 @@ class Home extends React.Component {
     if (this.state.displayResult) {
       return (
         <div className="results-page-container">
-          <Map data={data} />
-          <List data={data} />
+          <Map data={data} handleSelect={this.handleSelect}/>
+          <List data={data} id={this.state.selectedId}/>
         </div>
       );
     } else {

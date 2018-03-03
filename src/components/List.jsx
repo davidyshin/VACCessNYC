@@ -6,7 +6,7 @@ class List extends React.Component {
     this.state = {};
   }
   componentWillReceiveProps(nextProps) {
-    if (this.props.selectedId !== nextProps.selectedId) {
+    if (this.props.id !== nextProps.id) {
       document.getElementById(nextProps.id).scrollIntoView();
     }
   }
@@ -19,7 +19,7 @@ class List extends React.Component {
         <ul className="pharm-list">
           {data.map(pharm => {
             return (
-              <li className="pharm-list-item" id={pharm.id}>
+              <li className="pharm-list-item" id={pharm.a}>
                 {pharm.facility_name}
               </li>
             );

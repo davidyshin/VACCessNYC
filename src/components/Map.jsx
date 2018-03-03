@@ -23,8 +23,8 @@ class Map extends React.Component {
   renderPin = pin => {
     return (
       <this.mapPin
-        id={pin.facility_name}
-        onClick={this.showName}
+        id={pin.a}
+        onClick={this.props.handleSelect}
         lat={pin.location.coordinates[1].toString()}
         lng={pin.location.coordinates[0].toString()}
         image={needle}
