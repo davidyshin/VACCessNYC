@@ -9,16 +9,9 @@ class Map extends React.Component {
     super();
     this.state = {
       center: { lat: 40.737975, lng: -73.8801301 },
-      zoom: 14,
+      zoom: 12,
       data: []
     };
-  }
-  componentWillMount() {
-    axios
-      .get("https://data.cityofnewyork.us/resource/inaf-e6a5.json")
-      .then(res => {
-        this.setState({ data: res.data });
-      });
   }
   // pins to render on map
   mapPin = ({ id, onClick }) => {
@@ -40,7 +33,8 @@ class Map extends React.Component {
   };
 
   render() {
-    const { data } = this.state;
+    console.log(this.state.data)
+    const { data } = this.props;
     return (
       // Google Maps Container
       <div>
