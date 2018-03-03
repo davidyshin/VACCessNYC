@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Map from './components/Map.jsx'
 import Home from './components/Home.jsx'
+import { Route, Link, Switch, Redirect } from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -10,7 +11,10 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to VACCess NYC</h1>
         </header>
-        <Map />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/map" component={Map} />
+        </Switch>
       </div>
     );
   }

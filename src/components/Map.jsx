@@ -40,7 +40,7 @@ class Map extends React.Component {
   };
 
   render() {
-    const {data} = this.state
+    const { data } = this.state;
     return (
       // Google Maps Container
       <div>
@@ -55,7 +55,6 @@ class Map extends React.Component {
             {/*Map pins according to data here*/}
             {data.map(this.renderPin)}
           </GoogleMapReact>
-          
         </div>
       </div>
     );
