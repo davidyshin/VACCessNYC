@@ -14,8 +14,8 @@ class List extends React.Component {
   render() {
     const { data } = this.props;
     return (
-      <div className="list-container">
-        <h3> Pharmacies </h3>
+      <div className="location-list">
+ 
         <ul className="pharm-list">
           {data.map(pharm => {
             return (
