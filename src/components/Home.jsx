@@ -83,6 +83,7 @@ class Home extends React.Component {
     console.log(this.state);
 
     return (
+
       <div>
         <this.DisplayResultPage />
       </div>

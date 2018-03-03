@@ -1,4 +1,5 @@
 /* Importing fonts from Google Fonts for the overall app */
+
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto:400,400i,700,700i');
 
 /* 
@@ -6,18 +7,93 @@ font-family: 'Roboto', sans-serif; // overall text for app
 font-family: 'Abril Fatface', cursive; // seperate font for app name: VACCess NYC
 */
 
+/* Overall app layout */
 body {
-  background-color: white;
-  font-family: 'Roboto', sans-serif;
-  color: #1C374C;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    color: #1C374C;
 }
 
 .App {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Header of the app: includes the banner of the app */
+.App-header {
+  background-color: #1B8895;
+  color: white;
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 100%;
-  height: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
+}
+
+.App-title {
+  font-size: 1.5em;
+  font-family: 'Abril Fatface', cursive;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+/* Homepage Container: includes a location question, search bar, search button,  */
+
+#homepage {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-question {
+    display: flex;
+    justify-content: center;
+}
+
+.home-search {
+    -webkit-appearance: none;
+    border-radius: 3px 3px;
+    text-indent: 20px;
+    width: 500px;
+    height: 40px;
+    font-size: 2em;
+}
+
+.home-search::placeholder {
+    color: rgb(163, 163, 163);
+    font-family: 'Roboto', sans-serif;
+}
+
+.home-submit {
+    -webkit-appearance: none;
+    color: white;
+    font-weight: bold;
+    background-color: #1B8895;
+    border: #1B8895;
+    border-radius: 3px 3px;
+    height: 40px;
+    font-size: 14px;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.home-submit:hover {
+    opacity: 0.6
+}
+
+.search-tool {
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+/* Map container: pin, affect of pin when hovered */
+.map-container {
+    height: 400px;
+    width: 100%;
 }
 
 .map-pin {
@@ -30,69 +106,3 @@ body {
   cursor: pointer;
   transform: scale(1.50);
 }
-
-.home-search {
-  -webkit-appearance: none;
-    border-radius: 3px 3px;
-    text-indent: 20px;
-    width: 500px;
-    height: 40px;
-    font-size: 2em;
-}
-
-.home-search::placeholder {
-  color: rgb(163, 163, 163);
-  font-family: 'Roboto', sans-serif;
-}
-
-.home-submit {
-    -webkit-appearance: none;
-    color: white;
-    font-weight: bold;
-    background-color: #158EB1;
-    border: #158EB1;
-    border-radius: 3px 3px;
-    width: 60px;
-    height: 40px;
-    font-size: 14px;
-    opacity: 1;
-    transition: 0.3s;
-}
-
-.home-submit:hover{
-  opacity: 0.6
-}
-
-.search-tool {
-  display: flex;
-  flex: auto;
-  justify-content: center;
-  align-items: center; 
-  height: 500px;
-}
-
-.App-header {
-  background-color: #158EB1;
-  height: 25px;
-  color: white;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* flex-wrap: wrap; */
-}
-
-.App-title {
-  font-size: 1.5em;
-  font-family: 'Abril Fatface', cursive;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-.map-container {
-  height: 400px;
-  width: 100%;
-}
-
