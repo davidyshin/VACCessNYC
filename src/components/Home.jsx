@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Map from "./Map.jsx"
+import Map from "./Map.jsx";
+import Search from "./Search.jsx";
+import List from "./List.jsx";
+import { Route, Link, Switch, Redirect } from "react-router-dom";
+import axios from "axios";
 
 import validZips from "./validZips";
 
@@ -9,12 +13,38 @@ class Home extends React.Component {
     super();
     this.state = {
       zip: "",
-      message: ""
+      message: "",
+      displayResult: false,
+      data: [],
+      zipCoords: []
     };
   }
 
-  handleSubmit = e => {};
-  handleSearchInput = e => {
+  handleSubmit = e => {
+    e.preventDefault();
+    axios
+      .get("https://data.cityofnewyork.us/resource/inaf-e6a5.json")
+      .then(res => {
+        this.setState({ data: res.data });
+      });
+    if (this.state.data.length > 0) {
+      this.setState({ displayResult: true });
+    }
+  };
+
+  handleZipCode = e => {
+    e.preventDefault();
+    axios
+      .get(`https://data.cityofnewyork.us/resource/inaf-e6a5.json?zip_code=${this.state.zip}`)
+      .then(res => {
+        this.setState({ data: res.data })
+      })
+      if (this.state.data.length > 0) {
+        this.setState({ displayResult: true });
+      }
+  }
+
+  handleInput = e => {
     this.setState({
       zip: e.target.value,
       message: validZips.includes(Number(e.target.value))
@@ -23,26 +53,38 @@ class Home extends React.Component {
     });
   };
 
-  render() {
+  DisplayResultPage = () => {
+    const { data } = this.state;
     const { zip, message } = this.state;
-    const btn = zip ? "Search" : "See all pharmacies";
+    const buttonText = zip ? "Search" : "See all pharmacies";
+    
+    if (this.state.displayResult) {
+      return (
+        <div className="results-page-container">
+          <Map data={data} />
+          <List data={data} />
+        </div>
+      );
+    } else {
+      return (
+        <Search
+          message={message}
+          buttonText={buttonText}
+          zip={this.state.zip}
+          handleInput={this.handleInput}
+          handleSubmit={this.handleSubmit}
+          handleZipCode={this.handleZipCode}
+        />
+      );
+    }
+  };
+
+  render() {
     console.log(this.state);
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit} className="search-tool">
-          <input
-            className="home-search"
-            type="search"
-            placeholder="All of NYC or Enter a Zip Code"
-            onChange={this.handleSearchInput}
-            value={zip}
-          />
-          <button className="home-submit" type="submit">
-            {btn}
-          </button>
-        </form>
-        <span className="home-message">{message}</span>
+        <this.DisplayResultPage />
       </div>
     );
   }
