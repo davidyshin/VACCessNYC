@@ -90,6 +90,7 @@ class Home extends React.Component {
             <nav className="App-nav">
               <div className="App-map-title">
                 <h1> VACCess NYC </h1>
+                <img className="banner-image" src="../src/images/banner.png" alt="banner"/>
               </div>
             </nav>
           </div>
