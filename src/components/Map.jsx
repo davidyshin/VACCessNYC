@@ -23,7 +23,7 @@ class Map extends React.Component {
           <h1 className="pin-pharm-facility-name">{pharm.facility_name}</h1>
           <p id={pharm.a}>
             <span className="italics">Address:</span>{" "}
-            {pharm.address + " " + pharm.borough + " " + pharm.zip_code}
+            {pharm.address + ", " + pharm.borough + ", NY " + pharm.zip_code}
           </p>
           <p id={pharm.a}>
             <span className="italics">Contact:</span> {pharm.phone}

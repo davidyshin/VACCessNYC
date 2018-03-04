@@ -4,12 +4,12 @@ import banner from "../images/banner.png";
 const Search = props => {
   return (
     <div>
-    <h2> Find your nearest Flu Vaccination.</h2>
+    <h2> Fight the Flu - Find a pharmacy today!</h2>
       <form onSubmit={props.zip ? props.handleZipCode : props.handleSubmit} className="search-tool">
         <input
           className="home-search"
           type="search"
-          placeholder="All of NYC or Enter a Zip Code"
+          placeholder="Enter a Zip Code or..."
           onChange={props.handleInput}
           value={props.zip}
         />

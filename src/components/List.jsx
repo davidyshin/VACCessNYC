@@ -40,7 +40,7 @@ class List extends React.Component {
                   <p id={pharm.a}>
                     <span className="italics">Address:</span>{" "}
                     <br />
-                    {pharm.address + " " + pharm.borough + " " + pharm.zip_code}
+                    {pharm.address + ", " + pharm.borough + ", NY " + pharm.zip_code}
                   </p>
                 </ul>
               </li>
