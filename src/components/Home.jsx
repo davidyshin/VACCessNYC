@@ -88,8 +88,10 @@ class Home extends React.Component {
         <div>
           <div>
             <nav className="App-nav">
-              <div className="map-title-div">
-                <h1> VACCess NYC </h1>
+
+              <div className="App-map-title">
+                <h1> [V]ACCESS NYC </h1>
+
               </div>
               <div className="map-search-div">
                   <form onSubmit={ zip ? this.handleZipCode : this.handleSubmit } className="map-search-tool">
@@ -130,9 +132,10 @@ class Home extends React.Component {
         <div>
           <header className="App-header">
             <h1>
-              <span className="App-title"> VACCess NYC </span>
+              <span className="App-title"> (V)ACCESS NYC </span>
             </h1>
-          </header>
+          </header>  
+          <div className="home-container">
           <Search
             message={message}
             buttonText={buttonText}
@@ -141,6 +144,8 @@ class Home extends React.Component {
             handleSubmit={this.handleSubmit}
             handleZipCode={this.handleZipCode}
           />
+         
+          </div>
         </div>
       );
     }
