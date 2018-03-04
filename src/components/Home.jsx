@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Map from "./Map.jsx";
+import MapBox from "./Map.jsx";
 import Search from "./Search.jsx";
 import List from "./List.jsx";
 import { Route, Link, Switch, Redirect } from "react-router-dom";
@@ -84,7 +84,7 @@ class Home extends React.Component {
             </header>
           </div>
           <div className="map-page">
-            <Map
+            <MapBox
               hoveredId={this.state.hoveredId}
               data={data}
             />
