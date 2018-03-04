@@ -3,7 +3,7 @@ import React from "react";
 class List extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = { };
   }
 
   render() {
@@ -11,7 +11,15 @@ class List extends React.Component {
     return (
       <div className="location-list">
         <h3 className="pharm-header"> Pharmacies </h3>
-        {data.map(pharm => {
+        <span>
+        <input
+          name="forChild"
+          type="checkbox"
+          checked={this.state.forChild}
+          onChange={this.props.handleCheckboxChange}
+        />Services for Children
+        </span>
+        {data.length > 0 ? data.map(pharm => {
           return (
             <ul
               onClick={this.props.selectId}
@@ -36,7 +44,7 @@ class List extends React.Component {
               </li>
             </ul>
           );
-        })}
+        }) : <p className="italics">Sorry, there are no pharmacies in this location that service children. :(</p>}
       </div>
     );
   }
