@@ -26,7 +26,7 @@ class Map extends React.Component {
     return (
       <this.mapPin
         id={pin.facility_name}
-        onClick={console.log("Placeholder")}
+        onClick={this.props.selectId}
         lat={pin.location.coordinates[1].toString()}
         lng={pin.location.coordinates[0].toString()}
         image={needle}
