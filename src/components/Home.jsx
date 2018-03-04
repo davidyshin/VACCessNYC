@@ -16,7 +16,8 @@ class Home extends React.Component {
       message: "",
       displayResult: false,
       data: [],
-      zipCoords: []
+      hoveredId: "",
+      center: ""
     };
   }
 
@@ -28,7 +29,10 @@ class Home extends React.Component {
     axios
       .get("https://data.cityofnewyork.us/resource/inaf-e6a5.json")
       .then(res => {
-        this.setState({ data: res.data });
+        this.setState({
+          data: res.data,
+          center: { lat: 40.737975, lng: -73.8801301 },
+        });
       });
   };
 
@@ -40,9 +44,20 @@ class Home extends React.Component {
           this.state.zip
         }`
       )
-      .then(res => {
-        this.setState({ data: res.data });
+      .then(pharm => {
+        this.setState({ data: pharm.data, zoom: 14 });
       });
+  };
+  handleHover = e => {
+    this.setState({
+      hoveredId: e.target.id
+    });
+  };
+
+  handleUnhover = e => {
+    this.setState({
+      hoveredId: ""
+    });
   };
 
   handleInput = e => {
@@ -70,8 +85,18 @@ class Home extends React.Component {
             </header>
           </div>
           <div className="map-page">
-            <Map id={this.state.id} data={data} />
-            <List selectId={this.selectId} data={data} />
+            <Map
+              center={this.state.center}
+              zoom="12"
+              hoveredId={this.state.hoveredId}
+              data={data}
+            />
+            <List
+              selectId={this.selectId}
+              handleHover={this.handleHover}
+              handleUnhover={this.handleUnhover}
+              data={data}
+            />
           </div>
         </div>
       );
@@ -97,7 +122,6 @@ class Home extends React.Component {
   };
 
   render() {
-
     return (
       <div>
         <this.DisplayResultPage />
