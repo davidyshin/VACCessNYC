@@ -1,8 +1,10 @@
 import React from "react";
+import banner from "../images/banner.png";
 
 const Search = props => {
   return (
     <div>
+    <h1> Hello There! </h1>
       <form onSubmit={props.zip ? props.handleZipCode : props.handleSubmit} className="search-tool">
         <input
           className="home-search"
@@ -20,6 +22,7 @@ const Search = props => {
         </button>
       </form>
       <span className="home-message">{props.message}</span>
+      <img className="banner-image" src={banner}/>
     </div>
   );
 };

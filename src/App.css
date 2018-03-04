@@ -1,8 +1,10 @@
 /* Importing fonts from Google Fonts for the overall app */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i|Rufina:400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-/* 
+@import url('https://fonts.googleapis.com/css?family=Unica+One');
+/*
 font-family: 'Roboto', sans-serif; // overall text for app
 font-family: 'Rufina', serif; // seperate font for app name: VACCess NYC
 */
@@ -10,7 +12,7 @@ font-family: 'Rufina', serif; // seperate font for app name: VACCess NYC
 /* Overall app layout */
 body {
     background-color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #1C374C;
 }
 
@@ -43,7 +45,7 @@ body {
 
 .App-title, .App-map-title {
   font-size: 1.5em;
-  font-family: 'Rufina', serif;
+  font-family: 'Unica One', cursive;
 }
 
 .App-map-title {
@@ -78,7 +80,7 @@ body {
 
 .home-search::placeholder {
     color: rgb(163, 163, 163);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     align-items: center;
 }
 
@@ -105,7 +107,7 @@ body {
     flex: auto;
     justify-content: center;
     align-items: center;
-    height: 500px;
+    height: 280px;
 }
 
 /* Map container: pin, affect of pin when hovered */
@@ -164,6 +166,12 @@ body {
 
 .pharm-list h3 {
     padding-left: 10px;
+}
+
+.banner-image {
+    width: 100%;
+    display:absolute;
+    bottom: 0;
 }
 
 .pharm-header {
