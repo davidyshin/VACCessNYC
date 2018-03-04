@@ -97,7 +97,7 @@ search bar, search button ---------- */
     flex: auto;
     justify-content: center;
     align-items: center;
-    height: 280px;
+    height: 330px;
 }
 
 /* ---------- Map container: pin, affect of pin when hovered ----------*/
