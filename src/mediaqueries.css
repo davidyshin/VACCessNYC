@@ -1,0 +1,13 @@
+/* ----- Media Queries for different screen sizes ----- */
+@media screen and (max-width: 520px) {
+    .search-tool {
+        display: inline-flex;
+        flex-direction: column;
+    }
+    .home-search{
+        width: 80%;
+    }
+    .home-submit {
+         width: 80%;
+    }
+}
