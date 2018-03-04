@@ -15,17 +15,12 @@ class Map extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.id !== nextProps.id) {
-      console.log("Condition Satisfied");
-    }
-  }
 
   // pins to render on map
   mapPin = ({ pharm, onClick }) => {
     return (
-      <div>
-        <div className={pharm.a === this.props.hoveredId ? "" : "hidden"}>
+      <div className="pin-container">
+        <div className={pharm.a === this.props.hoveredId ? "pin-info" : "hidden"}>
           <h1>{pharm.facility_name}</h1>
           <p id={pharm.a}>
             <span className="italics">Address:</span>{" "}
@@ -50,6 +45,7 @@ class Map extends React.Component {
   };
 
   renderPin = pin => {
+    console.log(pin.location.coordinates[1].toString(), pin.location.coordinates[0].toString())
     return (
       <this.mapPin
         pharm={pin}
@@ -63,7 +59,6 @@ class Map extends React.Component {
 
   render() {
     const { data } = this.props;
-    console.log(this.state.center, "MAP.JSX");
     return (
       // Google Maps Container
       <div className="map-container">

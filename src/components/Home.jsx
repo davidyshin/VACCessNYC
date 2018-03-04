@@ -31,7 +31,6 @@ class Home extends React.Component {
       .then(res => {
         this.setState({
           data: res.data,
-          center: { lat: 40.737975, lng: -73.8801301 },
         });
       });
   };
@@ -45,7 +44,7 @@ class Home extends React.Component {
         }`
       )
       .then(pharm => {
-        this.setState({ data: pharm.data, zoom: 14 });
+        this.setState({ data: pharm.data});
       });
   };
   handleHover = e => {
@@ -86,8 +85,6 @@ class Home extends React.Component {
           </div>
           <div className="map-page">
             <Map
-              center={this.state.center}
-              zoom="12"
               hoveredId={this.state.hoveredId}
               data={data}
             />
