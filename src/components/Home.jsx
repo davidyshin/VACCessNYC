@@ -63,11 +63,11 @@ class Home extends React.Component {
       return (
         <div>
           <div>
-            <header className="App-header">
-              <h1>
-                <span className="App-title"> VACCess NYC </span>
-              </h1>
-            </header>
+            <nav className="App-nav">
+              <div className="App-map-title">
+                <h1> VACCess NYC </h1>
+              </div>
+            </nav>
           </div>
           <div className="map-page">
             <Map id={this.state.id} data={data} />
@@ -97,7 +97,6 @@ class Home extends React.Component {
   };
 
   render() {
-
     return (
       <div>
         <this.DisplayResultPage />

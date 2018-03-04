@@ -22,20 +22,33 @@ body {
 }
 
 /* Header of the app: includes the banner of the app */
-.App-header {
-  background-color: #1B8895;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: flex-end;
-  height: 15%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.App-header, .App-nav {
+	background-color: #1B8895;
+    color: white;
+	display: flex;
+	height: 15%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.App-title {
+.App-header {
+    justify-content: center;
+    align-items: center;
+    align-content: flex-end;
+}
+
+.App-nav {
+	display: flex;
+	flex-direction: row;
+}
+
+.App-title, .App-map-title {
   font-size: 1.5em;
   font-family: 'Rufina', serif;
+}
+
+.App-map-title {
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .App-intro {
