@@ -135,8 +135,9 @@ search bar, search button ---------- */
 .map-title-div {
 	font-size: 1.5em;
 	font-family: 'Rufina', serif;
-	width: 30%;
-	text-align: left;
+    width: 30%;
+    text-align: left;
+    
 	padding-left: 20px;
 }
 
@@ -283,4 +284,5 @@ a {
 
 #header-title {
     padding-left: 10px;
+    font-family: 'Unica One', cursive;
 }
