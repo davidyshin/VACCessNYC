@@ -49,7 +49,7 @@ class Home extends React.Component {
   getCoords = (lng, lat) => {
     const { data } = this.state;
     let coords = this.findCoords(data.map(n => n.location.coordinates));
-    let n = 40;
+    let n = 20;
 
     let height = coords.maxLat - coords.minLat;
     let width = coords.maxLng - coords.minLng;
@@ -132,7 +132,13 @@ class Home extends React.Component {
     let newPharms = data.reduce((acc, n) => {
       let gridSquare = this.getCoords(...n.location.coordinates);
       if (
-        !acc.some(el => this.getCoords(...el.location.coordinates) == gridSquare)
+        !acc.some(el => {
+          let oldGridSquare = this.getCoords(...el.location.coordinates);
+          return (
+            oldGridSquare[0] === gridSquare[0] &&
+            oldGridSquare[1] === gridSquare[1]
+          );
+        })
       ) {
         return [...acc, n];
       }
