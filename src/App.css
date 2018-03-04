@@ -145,8 +145,20 @@ body {
     right: -60px;
     z-index: 9;
     background-color: whitesmoke;
-    border: 1px black solid;
+    border: 1px #1C374C solid;
+    color: #1C374C;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
+
+.pin-phram-facility-name {
+    background-color: #0D5C63;
+    color: white;
+    margin: 0;
+    padding: 25px;
+}
+
 /* Pharmacy list */
 .location-list {
     display:flex;
@@ -190,4 +202,5 @@ body {
 
 .italics {
     font-style: italic;
+    font-weight: bold;
 }

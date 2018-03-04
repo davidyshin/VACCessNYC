@@ -21,7 +21,7 @@ class Map extends React.Component {
     return (
       <div className="pin-container">
         <div className={pharm.a === this.props.hoveredId ? "pin-info" : "hidden"}>
-          <h1>{pharm.facility_name}</h1>
+          <h1 className="pin-phram-facility-name">{pharm.facility_name}</h1>
           <p id={pharm.a}>
             <span className="italics">Address:</span>{" "}
             {pharm.address + " " + pharm.borough + " " + pharm.zip_code}
