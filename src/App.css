@@ -155,7 +155,10 @@ body {
 
 .pharm-list-item{
     border-bottom: solid 1px #0D5C63;
+}
 
+.pharm-list-item:hover{
+    background-color: grey
 }
 
 .italics {

@@ -15,6 +15,12 @@ class Map extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.id !== nextProps.id) {
+        console.log("Condition Satisfied")
+    }
+  }
+
   // pins to render on map
   mapPin = ({ id, onClick }) => {
     return (
@@ -25,8 +31,7 @@ class Map extends React.Component {
   renderPin = pin => {
     return (
       <this.mapPin
-        id={pin.facility_name}
-        onClick={console.log("Placeholder")}
+        id={pin.a}
         lat={pin.location.coordinates[1].toString()}
         lng={pin.location.coordinates[0].toString()}
         image={needle}
@@ -35,7 +40,6 @@ class Map extends React.Component {
   };
 
   render() {
-    console.log(this.state.data)
     const { data } = this.props;
     return (
       // Google Maps Container

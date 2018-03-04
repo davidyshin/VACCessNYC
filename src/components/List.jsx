@@ -5,12 +5,6 @@ class List extends React.Component {
     super();
     this.state = {};
   }
-  componentWillReceiveProps(nextProps) {
-    if (this.props.id !== nextProps.id) {
-        console.log("Condition Satisfied")
-      document.getElementById(nextProps.id).scrollIntoView();
-    }
-  }
 
   render() {
     const { data } = this.props;
@@ -20,13 +14,13 @@ class List extends React.Component {
         <h3 className="pharm-header"> Pharmacies </h3>
           {data.map(pharm => {
             return (
-              <ul className="pharm-list">
+              <ul onClick = {this.props.selectId} className="pharm-list">
                 <li className="pharm-list-item" id={pharm.a}>
-                  <h3>{pharm.facility_name}</h3>
-                  <ul className="pharm-list-info">
-                    <p><span className="italics">Address:</span> {pharm.address + " " + pharm.borough + " " + pharm.zip_code}</p>
-                    <p><span className="italics">Contact:</span> {pharm.phone}</p>
-                    <p><span className="italics">Vaccines for kids:</span> {pharm.children}</p>
+                  <h3 id={pharm.a}>{pharm.facility_name}</h3>
+                  <ul id={pharm.a} className="pharm-list-info">
+                    <p id={pharm.a}><span className="italics">Address:</span> {pharm.address + " " + pharm.borough + " " + pharm.zip_code}</p>
+                    <p id={pharm.a}><span className="italics">Contact:</span> {pharm.phone}</p>
+                    <p id={pharm.a}><span className="italics">Vaccines for kids:</span> {pharm.children}</p>
                   </ul>
                 </li>
               </ul>

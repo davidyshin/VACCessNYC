@@ -28,7 +28,7 @@ class Home extends React.Component {
     axios
       .get("https://data.cityofnewyork.us/resource/inaf-e6a5.json")
       .then(res => {
-        this.setState({ data: res.data});
+        this.setState({ data: res.data });
       });
   };
 
@@ -41,7 +41,7 @@ class Home extends React.Component {
         }`
       )
       .then(res => {
-        this.setState({ data: res.data});
+        this.setState({ data: res.data });
       });
   };
 
@@ -64,12 +64,14 @@ class Home extends React.Component {
         <div>
           <div>
             <header className="App-header">
-              <h1><span className="App-title" > VACCess NYC </span></h1>
+              <h1>
+                <span className="App-title"> VACCess NYC </span>
+              </h1>
             </header>
           </div>
           <div className="map-page">
-            <Map selectId={this.selectId} data={data} />
-            <List id={this.state.id} data={data} />
+            <Map id={this.state.id} data={data} />
+            <List selectId={this.selectId} data={data} />
           </div>
         </div>
       );
@@ -77,8 +79,10 @@ class Home extends React.Component {
       return (
         <div>
           <header className="App-header">
-            <h1><span className="App-title" > VACCess NYC </span></h1>
-          </header> 
+            <h1>
+              <span className="App-title"> VACCess NYC </span>
+            </h1>
+          </header>
           <Search
             message={message}
             buttonText={buttonText}
@@ -93,7 +97,6 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log(this.state);
 
     return (
       <div>
