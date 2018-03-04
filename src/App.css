@@ -266,3 +266,12 @@ search bar, search button ---------- */
 .hidden {
     display:none;
 }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#header-title {
+    padding-left: 10px;
+}

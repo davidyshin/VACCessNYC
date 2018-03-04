@@ -90,7 +90,7 @@ class Home extends React.Component {
             <nav className="App-nav">
 
               <div className="App-map-title">
-                <h1> [V]ACCESS NYC </h1>
+               <a href="/"> <h1 id="header-title"> [V]ACCESS NYC </h1> </a>
 
               </div>
               <div className="map-search-div">
@@ -132,7 +132,7 @@ class Home extends React.Component {
         <div>
           <header className="App-header">
             <h1>
-              <span className="App-title"> (V)ACCESS NYC </span>
+              <span className="App-title"> [V]ACCESS NYC </span>
             </h1>
           </header>  
           <div className="home-container">
