@@ -1,10 +1,10 @@
 /* Importing fonts from Google Fonts for the overall app */
 
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i|Rufina:400,700');
 
 /* 
 font-family: 'Roboto', sans-serif; // overall text for app
-font-family: 'Abril Fatface', cursive; // seperate font for app name: VACCess NYC
+font-family: 'Rufina', serif; // seperate font for app name: VACCess NYC
 */
 
 /* Overall app layout */
@@ -30,11 +30,12 @@ body {
   align-items: center;
   align-content: flex-end;
   height: 15%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .App-title {
   font-size: 1.5em;
-  font-family: 'Abril Fatface', cursive;
+  font-family: 'Rufina', serif;
 }
 
 .App-intro {
@@ -65,6 +66,7 @@ body {
 .home-search::placeholder {
     color: rgb(163, 163, 163);
     font-family: 'Roboto', sans-serif;
+    align-items: center;
 }
 
 .home-submit {
@@ -78,6 +80,7 @@ body {
     font-size: 14px;
     opacity: 1;
     transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .home-submit:hover {
@@ -137,7 +140,7 @@ body {
 }
 
 .pharm-header {
-    background-color: rgb(32, 129, 129);
+    background-color: #0D5C63;
     color: white;
     height: 50px;
     font-size: 1.5em;
@@ -145,14 +148,13 @@ body {
     margin: 0 auto;
 }
 
-
 .pharm-list-info, .pharm-list {
     list-style-type: none;
     text-align: left;
 }
 
 .pharm-list-item{
-    border-bottom: solid 1px rgb(32, 129, 129);
+    border-bottom: solid 1px #0D5C63;
 
 }
 
