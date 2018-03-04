@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './mediaqueries.css';
 import Map from './components/Map.jsx'
 import Home from './components/Home.jsx'
 import { Route, Link, Switch, Redirect } from "react-router-dom";
