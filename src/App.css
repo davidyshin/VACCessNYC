@@ -91,12 +91,18 @@ search bar, search button ---------- */
     opacity: 0.6
 }
 
+.home-container > div{
+    height: -webkit-fill-available;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+}
+
 .search-tool {
     display: flex;
     flex: auto;
     justify-content: center;
     align-items: center;
-    height: 330px;
 }
 
 /* ---------- Map container: pin, affect of pin when hovered ----------*/
