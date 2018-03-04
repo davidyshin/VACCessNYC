@@ -16,7 +16,7 @@ class Map extends React.Component {
   }
 
   // pins to render on map
-  mapPin = ({ pharm, onClick }) => {
+  mapPin = ({ pharm }) => {
     return (
       <div className="pin-container">
         <div className={pharm.a === this.props.hoveredId ? "pin-info" : "hidden"}>
@@ -34,7 +34,7 @@ class Map extends React.Component {
         </div>
         <img
           id={pharm.a}
-          onClick={onClick}
+          onClick={this.props.pinClick}
           className="map-pin"
           alt=""
           src={needle}
@@ -68,7 +68,7 @@ class Map extends React.Component {
           bootstrapURLKeys={{
             key: "AIzaSyBa5tRyQAmC5MmyqK-bpMGJa7dRTHlyxus"
           }}
-       
+          onClick={this.props.elseClick}
           defaultCenter={this.state.center}
           defaultZoom={this.state.zoom}
         >

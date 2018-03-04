@@ -246,14 +246,23 @@ search bar, search button ---------- */
 .pharm-list-info, .pharm-list {
     list-style-type: none;
     text-align: left;
+    
 }
 
 .pharm-list-item{
     border-bottom: solid 1px #0D5C63;
 }
 
-.pharm-list-item:hover{
-    background-color: grey
+.pharm-list:hover{
+    background-color: rgba(36, 136, 148, .3);
+    list-style-type: none;
+
+}
+.pharm-list-selected {
+    background-color: rgba(36, 136, 148, .3);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 

@@ -7,7 +7,7 @@ class List extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, clickedPin } = this.props;
     return (
       <div className="location-list">
         <h3 className="pharm-header"> Pharmacies </h3>
@@ -25,7 +25,7 @@ class List extends React.Component {
               onClick={this.props.selectId}
               onMouseEnter={this.props.handleHover}
               onMouseLeave={this.props.handleUnhover}
-              className="pharm-list"
+              className={this.props.clickedPin === pharm.a ? "pharm-list-selected" : "pharm-list"}
             >
               <li
                 onMouseEnter={this.props.handleHover}
