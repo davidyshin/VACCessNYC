@@ -19,9 +19,10 @@ class Home extends React.Component {
       hoveredId: "",
       clickedPin: "",
       center: "",
-      forChild: false
+      forChild: false,
     };
   }
+
 
   handleCheckboxChange = e => {
     this.setState({
@@ -67,6 +68,7 @@ class Home extends React.Component {
     });
   };
 
+
   handleInput = e => {
     this.setState({
       zip: e.target.value,
@@ -86,7 +88,6 @@ class Home extends React.Component {
       clickedPin: ""
     });
   };
-
   DisplayResultPage = () => {
     const { data } = this.state;
     let renderData = !this.state.forChild
@@ -94,7 +95,7 @@ class Home extends React.Component {
       : data.filter(pharm => pharm.children === "Yes");
     const { zip, message } = this.state;
     const buttonText = zip ? "Search" : "See all pharmacies";
-
+    console.log(this.state);
     if (this.state.data.length > 0) {
       return (
         <div>
