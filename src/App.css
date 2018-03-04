@@ -124,7 +124,7 @@ body {
     display:none;
 }
 .pin-container {
-    position:relative;
+    position:absolute;
 }
 .pin-info {
     position: absolute;
@@ -160,6 +160,7 @@ body {
     font-size: 1.5em;
     width: 100%;
     margin: 0 auto;
+    padding-top: 10px;
 }
 
 .pharm-list-info, .pharm-list {

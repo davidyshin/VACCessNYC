@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import MapBox from "./Map.jsx";
+import Map from "./Map.jsx";
 import Search from "./Search.jsx";
 import List from "./List.jsx";
 import { Route, Link, Switch, Redirect } from "react-router-dom";
@@ -17,9 +17,18 @@ class Home extends React.Component {
       displayResult: false,
       data: [],
       hoveredId: "",
-      center: ""
+      center: "",
+      forChild: false
     };
   }
+
+
+  handleCheckboxChange = e => {
+    this.setState({
+      [e.target.name]: e.target.checked
+    });
+  };
+
 
   selectId = e => {
     this.setState({ id: e.target.id });
@@ -70,6 +79,7 @@ class Home extends React.Component {
 
   DisplayResultPage = () => {
     const { data } = this.state;
+    let renderData = !this.state.forChild ? data : data.filter(pharm=> pharm.children === "Yes")
     const { zip, message } = this.state;
     const buttonText = zip ? "Search" : "See all pharmacies";
 
@@ -84,15 +94,16 @@ class Home extends React.Component {
             </header>
           </div>
           <div className="map-page">
-            <MapBox
+            <Map
               hoveredId={this.state.hoveredId}
-              data={data}
+              data={renderData}
             />
             <List
               selectId={this.selectId}
               handleHover={this.handleHover}
               handleUnhover={this.handleUnhover}
-              data={data}
+              handleCheckboxChange={this.handleCheckboxChange}
+              data={renderData}
             />
           </div>
         </div>
