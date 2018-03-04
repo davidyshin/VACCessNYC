@@ -61,21 +61,33 @@ class Home extends React.Component {
 
     if (this.state.data.length > 0) {
       return (
-        <div className="map-page">
-          <Map selectId={this.selectId} data={data} />
-          <List id={this.state.id} data={data} />
+        <div>
+          <div>
+            <header className="App-header">
+              <h1><span className="App-title" > VACCess NYC </span></h1>
+            </header>
+          </div>
+          <div className="map-page">
+            <Map selectId={this.selectId} data={data} />
+            <List id={this.state.id} data={data} />
+          </div>
         </div>
       );
     } else {
       return (
-        <Search
-          message={message}
-          buttonText={buttonText}
-          zip={this.state.zip}
-          handleInput={this.handleInput}
-          handleSubmit={this.handleSubmit}
-          handleZipCode={this.handleZipCode}
-        />
+        <div>
+          <header className="App-header">
+            <h1><span className="App-title" > VACCess NYC </span></h1>
+          </header> 
+          <Search
+            message={message}
+            buttonText={buttonText}
+            zip={this.state.zip}
+            handleInput={this.handleInput}
+            handleSubmit={this.handleSubmit}
+            handleZipCode={this.handleZipCode}
+          />
+        </div>
       );
     }
   };
