@@ -182,7 +182,7 @@ search bar, search button ---------- */
 /* ---------- Map pins ---------- */
 
 .pin-container {
-    position:relative;
+    position:absolute;
 }
 .pin-info {
     position: absolute;
@@ -190,10 +190,23 @@ search bar, search button ---------- */
     right: -60px;
     z-index: 9;
     background-color: whitesmoke;
-    border: 1px black solid;
+    border: 1px #1C374C solid;
+    color: #1C374C;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
 
+.pin-pharm-facility-name {
+    background-color: #0D5C63;
+    color: white;
+    margin: 0;
+    padding: 25px;
+}
+
+
 /* ---------- Pharmacy list container ---------- */
+
 .location-list {
     display:flex;
     flex-direction: column;
@@ -219,6 +232,7 @@ search bar, search button ---------- */
     font-size: 1.5em;
     width: 100%;
     margin: 0 auto;
+    padding-top: 10px;
 }
 
 .pharm-list-info, .pharm-list {
@@ -238,6 +252,7 @@ search bar, search button ---------- */
 /* ---------- General styling guidelines ---------- */
 .italics {
     font-style: italic;
+  font-weight: bold;
 }
 
 .hidden {
