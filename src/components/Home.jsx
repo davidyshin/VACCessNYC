@@ -114,7 +114,7 @@ class Home extends React.Component {
                   <input
                     className="map-search"
                     type="search"
-                    placeholder="All of NYC or Enter a Zip Code"
+                    placeholder="Enter a Zip Code or..."
                     onChange={this.handleInput}
                     value={zip}
                   />

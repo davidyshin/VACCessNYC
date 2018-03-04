@@ -177,7 +177,9 @@ search bar, search button ---------- */
     font-size: 1em;
 	opacity: 1;
 	padding: 10px;
-    transition: 0.3s;
+	height: 40px;
+	width: 250px;
+	transition: 0.3s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -259,7 +261,7 @@ search bar, search button ---------- */
 }
 
 .pharm-list-item{
-    border-bottom: solid 1px #0D5C63;
+	border-bottom: solid 1px #0D5C63;
 }
 
 .pharm-list:hover{
