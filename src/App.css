@@ -9,7 +9,7 @@ font-family: 'Roboto', sans-serif; // overall text for app
 font-family: 'Rufina', serif; // seperate font for app name: VACCess NYC
 */
 
-/* Overall app layout */
+/* ---------- Overall app layout ---------- */
 body {
     background-color: white;
     font-family: 'Open Sans', sans-serif;
@@ -23,7 +23,7 @@ body {
     height: 100%;
 }
 
-/* Header of the app: includes the banner of the app */
+/* ---------- Header of the app: includes the banner of the app ---------- */
 .App-header, .App-nav {
 	background-color: #1B8895;
     color: white;
@@ -38,27 +38,17 @@ body {
     align-content: flex-end;
 }
 
-.App-nav {
-	display: flex;
-	flex-direction: row;
-}
-
-.App-title, .App-map-title {
+.App-title {
   font-size: 1.5em;
   font-family: 'Unica One', cursive;
-}
-
-.App-map-title {
-	padding-left: 20px;
-	padding-right: 20px;
 }
 
 .App-intro {
   font-size: large;
 }
 
-/* Homepage Container: includes a location question, search bar, search button,  */
-
+/* ---------- Homepage Container: includes a location question,
+search bar, search button ---------- */
 #homepage {
     display: flex;
     flex-wrap: wrap;
@@ -73,9 +63,9 @@ body {
     -webkit-appearance: none;
     border-radius: 3px 3px;
     text-indent: 20px;
-    width: 500px;
-    height: 40px;
-    font-size: 2em;
+    width: 50%;
+	padding: 10px;
+	font-size: 2em;
 }
 
 .home-search::placeholder {
@@ -91,14 +81,14 @@ body {
     background-color: #1B8895;
     border: #1B8895;
     border-radius: 3px 3px;
-    height: 40px;
-    font-size: 14px;
-    opacity: 1;
+    font-size: 2.1em;
+	opacity: 1;
+	padding: 10px;
     transition: 0.3s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.home-submit:hover {
+.home-submit:hover, .map-submit:hover {
     opacity: 0.6
 }
 
@@ -110,7 +100,7 @@ body {
     height: 280px;
 }
 
-/* Map container: pin, affect of pin when hovered */
+/* ---------- Map container: pin, affect of pin when hovered ----------*/
 .map-page {
   display: flex;
   height: 600px;
@@ -135,9 +125,64 @@ body {
   border-radius: 20px;
 }
 
-.hidden {
-    display:none;
+/* ---------- Map page nav bar ---------- */
+.App-nav {
+	display: inline-flex;
+	flex-direction: row;
+	width: 100%;
 }
+
+.map-title-div {
+	font-size: 1.5em;
+	font-family: 'Rufina', serif;
+	width: 30%;
+	text-align: left;
+	padding-left: 20px;
+}
+
+.map-search-div {
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+	font-size: 12px;
+}
+
+.map-search {
+	-webkit-appearance: none;
+	display: inline-flex;
+    border-radius: 3px 3px;
+    width: 100%;
+	padding: 10px;
+	font-size: 1em;
+	align-items: center;
+}
+
+.map-search-tool {
+	-webkit-appearance: none;
+	display: inline-flex;
+    border-radius: 3px 3px;
+    width: 100%;
+	padding: 5px;
+	font-size: 14px;
+	align-items: center;
+}
+
+.map-submit {
+	-webkit-appearance: none;
+    color: white;
+    font-weight: bold;
+    background-color: #1B8895;
+    border: #1B8895;
+    border-radius: 3px 3px;
+    font-size: 1em;
+	opacity: 1;
+	padding: 10px;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ---------- Map pins ---------- */
+
 .pin-container {
     position:absolute;
 }
@@ -147,9 +192,23 @@ body {
     right: -60px;
     z-index: 9;
     background-color: whitesmoke;
-    border: 1px black solid;
+    border: 1px #1C374C solid;
+    color: #1C374C;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
-/* Pharmacy list */
+
+.pin-pharm-facility-name {
+    background-color: #0D5C63;
+    color: white;
+    margin: 0;
+    padding: 25px;
+}
+
+
+/* ---------- Pharmacy list container ---------- */
+
 .location-list {
     display:flex;
     flex-direction: column;
@@ -197,6 +256,13 @@ body {
     background-color: grey
 }
 
+
+/* ---------- General styling guidelines ---------- */
 .italics {
     font-style: italic;
+  font-weight: bold;
+}
+
+.hidden {
+    display:none;
 }

@@ -39,7 +39,7 @@ class Home extends React.Component {
       .get("https://data.cityofnewyork.us/resource/inaf-e6a5.json")
       .then(res => {
         this.setState({
-          data: res.data,
+          data: res.data
         });
       });
   };
@@ -53,7 +53,7 @@ class Home extends React.Component {
         }`
       )
       .then(pharm => {
-        this.setState({ data: pharm.data});
+        this.setState({ data: pharm.data });
       });
   };
   handleHover = e => {
@@ -88,16 +88,35 @@ class Home extends React.Component {
         <div>
           <div>
             <nav className="App-nav">
+
               <div className="App-map-title">
-                <h1> (V)ACCESS NYC </h1>
+                <h1> [V]ACCESS NYC </h1>
+
               </div>
+              <div className="map-search-div">
+                  <form onSubmit={ zip ? this.handleZipCode : this.handleSubmit } className="map-search-tool">
+                    <input
+                      className="map-search"
+                      type="search"
+                      placeholder="All of NYC or Enter a Zip Code"
+                      onChange={this.handleInput}
+                      value={zip}
+                    />
+                    <button
+                      onSubmit={this.handleSubmit}
+                      className="map-submit"
+                      type="submit"
+                    >
+                      {buttonText}
+                    </button>
+                  </form>
+                </div>
             </nav>
           </div>
           <div className="map-page">
-            <Map
-              hoveredId={this.state.hoveredId}
-              data={renderData}
-            />
+
+            <Map hoveredId={this.state.hoveredId} data={renderData} />
+
             <List
               selectId={this.selectId}
               handleHover={this.handleHover}

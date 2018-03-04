@@ -37,6 +37,7 @@ class List extends React.Component {
                 <ul id={pharm.a} className="pharm-list-info">
                   <p id={pharm.a}>
                     <span className="italics">Address:</span>{" "}
+                    <br />
                     {pharm.address + " " + pharm.borough + " " + pharm.zip_code}
                   </p>
                 </ul>
