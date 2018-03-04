@@ -8,9 +8,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1> Welcome to<span className="App-title" > VACCess NYC </span></h1>
-        </header>
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>
