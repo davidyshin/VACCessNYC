@@ -2,7 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i|Rufina:400,700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
 @import url('https://fonts.googleapis.com/css?family=Unica+One');
 /*
 font-family: 'Roboto', sans-serif; // overall text for app
@@ -183,7 +182,6 @@ search bar, search button ---------- */
 }
 
 /* ---------- Map pins ---------- */
-
 .pin-container {
     position:absolute;
 }
@@ -209,6 +207,16 @@ search bar, search button ---------- */
 
 
 /* ---------- Pharmacy list container ---------- */
+.checkbox + .checkbox-text {
+	color: #bbb;
+	font-style: italic;
+}
+
+.checkbox:checked + .checkbox-text {
+	color: rgb(216, 64, 64);
+	font-style: normal;
+	font-weight: bold;
+}
 
 .location-list {
     display:flex;
