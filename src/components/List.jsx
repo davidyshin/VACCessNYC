@@ -11,14 +11,16 @@ class List extends React.Component {
     return (
       <div className="location-list">
         <h3 className="pharm-header"> Pharmacies </h3>
-        <span>
-        <input
-          name="forChild"
-          type="checkbox"
-          checked={this.state.forChild}
-          onChange={this.props.handleCheckboxChange}
-        />Services for Children
-        </span>
+        <label className="myCheckbox">
+            <input
+              className="checkbox"
+              name="forChild"
+              type="checkbox"
+              checked={this.state.forChild}
+              onChange={this.props.handleCheckboxChange}
+            /><span className="checkbox-text">Services for Children
+          </span>
+        </label>
         {data.length > 0 ? data.map(pharm => {
           return (
             <ul
