@@ -134,6 +134,7 @@ class Home extends React.Component {
               hoveredId={this.state.hoveredId}
               elseClick={this.elseClick}
               pinClick={this.pinClick}
+              clickedPin={this.state.clickedPin}
               data={renderData}
             />
 
