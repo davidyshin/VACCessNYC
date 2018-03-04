@@ -534,55 +534,57 @@ const data = [
   }
 ];
 
-let dataCoords = data.map(n => n.location.coordinates);
-let maxCoords = dataCoords.reduce((acc, n) => {
-  if (!acc.maxLat && acc.maxLat !== 0) {
-    acc.maxLat = n[1];
-  }
-  if (!acc.maxLng && acc.maxLng !== 0) {
-    acc.maxLng = n[0];
-  }
-  if (!acc.minLat && acc.minLat !== 0) {
-    acc.minLat = n[1];
-  }
-  if (!acc.minLng && acc.minLng !== 0) {
-    acc.minLng = n[0];
-  }
+findCoords = arr => {
+  let lats = [];
+  let lngs = [];
+  arr.forEach(n => {
+    lngs.push(n[0]);
+    lats.push(n[1]);
+  });
+  let maxLat = Math.max(...lats);
+  let minLat = Math.min(...lats);
+  let maxLng = Math.max(...lngs);
+  let minLng = Math.min(...lngs);
+  return { maxLat, minLat, maxLng, minLng };
+};
+// console.log(findCoords(dataCoords))
 
-  if (acc.maxLat < n[1]) {
-    acc.maxLat = n[1];
-  }
-  if (acc.maxLng < n[0]) {
-    acc.maxLng = n[0];
-  }
-  if (acc.minLat > n[1]) {
-    acc.minLat = n[1];
-  }
-  if (acc.minLng > n[0]) {
-    acc.minLng = n[0];
-  }
-  return acc;
-}, {});
+// // console.log(coords);
 
-// console.log(maxCoords);
+// let width = coords.maxLat - coords.minLat;
+// let height = coords.maxLng - coords.minLng;
 
-let n = 20;
-let width = maxCoords.maxLat - maxCoords.minLat;
-let height = maxCoords.maxLng - maxCoords.minLng;
+// let gridWidth = width / n;
+// let gridHeight = height / n;
 
-let gridWidth = width / n;
-let gridHeight = height / n;
+const getCoords = (lng, lat) => {
+  let coords = findCoords(data.map(n => n.location.coordinates));
+  let n = 20;
 
-const getCoords = (lat, lng) => {
-  let x = lng - maxCoords.minLng;
-  let y = lat - maxCoords.minLat;
+  let height = coords.maxLat - coords.minLat;
+  let width = coords.maxLng - coords.minLng;
+
+  let gridWidth = width / n;
+  let gridHeight = height / n;
+  let x = lng - coords.minLng;
+  let y = lat - coords.minLat;
 
   let newX = Math.floor(x / gridWidth);
   let newY = Math.floor(y / gridHeight);
-  return { newX, newY };
+  return [newX, newY];
 };
 
-dataCoords.forEach(n => {
-  console.log(getCoords(n[0], n[1]));
-});
+// dataCoords.forEach(n => {
+//   console.log(getCoords(n[0], n[1]));
+// });
+
+let newPharms = data.reduce((acc, n) => {
+  let gridSquare = getCoords(...n.location.coordinates);
+  if (!acc.some(el => getCoords(...el.location.coordinates) == gridSquare)) {
+    return [...acc, n];
+  }
+  return acc;
+}, []);
+
+console.log(newPharms.length, "out of", data.length);
 // console.log(getCoords(-73.87718672, 40.73644836))

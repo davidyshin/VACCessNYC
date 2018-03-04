@@ -19,10 +19,50 @@ class Home extends React.Component {
       hoveredId: "",
       clickedPin: "",
       center: "",
-      forChild: false,
+      forChild: false
     };
   }
 
+  findCoords = arr => {
+    let lats = [];
+    let lngs = [];
+    arr.forEach(n => {
+      lngs.push(n[0]);
+      lats.push(n[1]);
+    });
+    let maxLat = Math.max(...lats);
+    let minLat = Math.min(...lats);
+    let maxLng = Math.max(...lngs);
+    let minLng = Math.min(...lngs);
+    return { maxLat, minLat, maxLng, minLng };
+  };
+  // console.log(findCoords(dataCoords))
+
+  // // console.log(coords);
+
+  // let width = coords.maxLat - coords.minLat;
+  // let height = coords.maxLng - coords.minLng;
+
+  // let gridWidth = width / n;
+  // let gridHeight = height / n;
+
+  getCoords = (lng, lat) => {
+    const { data } = this.state;
+    let coords = this.findCoords(data.map(n => n.location.coordinates));
+    let n = 40;
+
+    let height = coords.maxLat - coords.minLat;
+    let width = coords.maxLng - coords.minLng;
+
+    let gridWidth = width / n;
+    let gridHeight = height / n;
+    let x = lng - coords.minLng;
+    let y = lat - coords.minLat;
+
+    let newX = Math.floor(x / gridWidth);
+    let newY = Math.floor(y / gridHeight);
+    return [newX, newY];
+  };
 
   handleCheckboxChange = e => {
     this.setState({
@@ -68,7 +108,6 @@ class Home extends React.Component {
     });
   };
 
-
   handleInput = e => {
     this.setState({
       zip: e.target.value,
@@ -90,9 +129,18 @@ class Home extends React.Component {
   };
   DisplayResultPage = () => {
     const { data } = this.state;
-    let renderData = !this.state.forChild
-      ? data
-      : data.filter(pharm => pharm.children === "Yes");
+    let newPharms = data.reduce((acc, n) => {
+      let gridSquare = this.getCoords(...n.location.coordinates);
+      if (
+        !acc.some(el => this.getCoords(...el.location.coordinates) == gridSquare)
+      ) {
+        return [...acc, n];
+      }
+      return acc;
+    }, []);
+    // let renderData = !this.state.forChild
+    //   ? data
+    //   : data.filter(pharm => pharm.children === "Yes");
     const { zip, message } = this.state;
     const buttonText = zip ? "Search" : "See all pharmacies";
     console.log(this.state);
@@ -136,7 +184,7 @@ class Home extends React.Component {
               elseClick={this.elseClick}
               pinClick={this.pinClick}
               clickedPin={this.state.clickedPin}
-              data={renderData}
+              data={newPharms}
             />
 
             <List
@@ -145,7 +193,7 @@ class Home extends React.Component {
               handleUnhover={this.handleUnhover}
               clickedPin={this.state.clickedPin}
               handleCheckboxChange={this.handleCheckboxChange}
-              data={renderData}
+              data={newPharms}
             />
           </div>
         </div>
