@@ -113,13 +113,27 @@ body {
   width: 60;
 }
 
-.map-pin:hover {
+.map-pin:hover{
   cursor: pointer;
   transform: scale(1.30);
   background-color: rgba(110, 160, 226, 0.253);
   border-radius: 20px;
 }
 
+.hidden {
+    display:none;
+}
+.pin-container {
+    position:relative;
+}
+.pin-info {
+    position: absolute;
+    bottom: 30px;
+    right: -60px;
+    z-index: 9;
+    background-color: whitesmoke;
+    border: 1px black solid;
+}
 /* Pharmacy list */
 .location-list {
     display:flex;
