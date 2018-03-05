@@ -93,7 +93,7 @@ class Home extends React.Component {
       ? data
       : data.filter(pharm => pharm.children === "Yes");
     const { zip, message } = this.state;
-    const buttonText = zip ? "Search" : "See all pharmacies";
+    const buttonText = zip ? "Search" : "See all locations";
 
     if (this.state.data.length > 0) {
       return (

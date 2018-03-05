@@ -10,7 +10,7 @@ class List extends React.Component {
     const { data, clickedPin } = this.props;
     return (
       <div className="location-list">
-        <h3 className="pharm-header"> Pharmacies </h3>
+        <h3 className="pharm-header"> Locations </h3>
         <label className="myCheckbox">
             <input
               className="checkbox"
@@ -46,7 +46,7 @@ class List extends React.Component {
               </li>
             </ul>
           );
-        }) : <p className="italics">Sorry, there are no pharmacies in this location that service children. :(</p>}
+        }) : <p className="italics">Sorry, there are no locations in this zip code that services children. :(</p>}
       </div>
     );
   }

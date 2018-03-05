@@ -14,7 +14,10 @@
 }
 
 @media screen and (min-width: 300px) and (max-width: 520px) {
-    .App-nav, .map-search-tool {
+    .App-nav {
+        height: 150px;
+    }
+    .App-nav, .map-search-tool, .map-submit {
         display: inline-flex;
         flex-direction: column;
     }
@@ -24,6 +27,7 @@
     .map-search, .map-submit {
         width: 100%;
         text-align: center;
+        justify-content: center;
     }
     .map-container {
         height: 400px;
