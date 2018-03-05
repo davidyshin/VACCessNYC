@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import Map from "./Map.jsx";
 import Search from "./Search.jsx";
 import List from "./List.jsx";
+import Saved from "./Saved.jsx"
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 import axios from "axios";
 
@@ -19,7 +20,9 @@ class Home extends React.Component {
       hoveredId: "",
       clickedPin: "",
       center: "",
+      saved: [],
       zoom: 12,
+      listActive: true,
       forChild: false
     };
   }
@@ -29,7 +32,12 @@ class Home extends React.Component {
       [e.target.name]: e.target.checked
     });
   };
-
+  toggleSaved = e => {
+    let {listActive} = this.state
+    this.setState({
+      listActive: !listActive
+    })
+  }
   selectId = e => {
     this.setState({ id: e.target.id });
   };
@@ -86,17 +94,26 @@ class Home extends React.Component {
   };
 
   listClicked = e => {
-    let clicked = this.state.data.find(el => el.a === e.target.id)
-    console.log(clicked.location.coordinates)
+    let clicked = this.state.data.find(el => el.a === e.target.id);
+    console.log(clicked.location.coordinates);
     this.setState({
-      center: {lat: clicked.location.coordinates[1], lng: clicked.location.coordinates[0]},
+      center: {
+        lat: clicked.location.coordinates[1],
+        lng: clicked.location.coordinates[0]
+      },
       zoom: 14
-    })
+    });
     // this.setState({})
-  }
+  };
   elseClick = e => {
     this.setState({
       clickedPin: ""
+    });
+  };
+  saveItem = e => {
+    let savedItems = [...this.state.saved];
+    this.setState({
+      saved: [e.target.id, ...savedItems]
     });
   };
 
@@ -152,16 +169,30 @@ class Home extends React.Component {
               center={this.state.center}
               zoom={this.state.zoom}
             />
-
-            <List
-              selectId={this.selectId}
-              handleHover={this.handleHover}
-              handleUnhover={this.handleUnhover}
-              listClicked={this.listClicked}
-              clickedPin={this.state.clickedPin}
-              handleCheckboxChange={this.handleCheckboxChange}
-              data={renderData}
-            />
+            {this.state.listActive ? (
+              <List
+                selectId={this.selectId}
+                handleHover={this.handleHover}
+                handleUnhover={this.handleUnhover}
+                listClicked={this.listClicked}
+                clickedPin={this.state.clickedPin}
+                saveItem={this.saveItem}
+                toggleSaved={this.toggleSaved}
+                handleCheckboxChange={this.handleCheckboxChange}
+                data={renderData}
+              />
+            ) : (
+              <Saved
+                selectId={this.selectId}
+                handleHover={this.handleHover}
+                handleUnhover={this.handleUnhover}
+                listClicked={this.listClicked}
+                clickedPin={this.state.clickedPin}
+                saveItem={this.saveItem}
+                toggleSaved={this.toggleSaved}
+                data={this.state.saved}
+              />
+            )}
           </div>
         </div>
       );

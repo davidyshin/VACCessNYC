@@ -1,6 +1,6 @@
 import React from "react";
 
-class List extends React.Component {
+class Saved extends React.Component {
   constructor() {
     super();
     this.state = {};
@@ -10,17 +10,7 @@ class List extends React.Component {
     const { data, clickedPin } = this.props;
     return (
       <div className="location-list">
-        <h3 onClick={this.props.toggleSaved} className="pharm-header"> Locations </h3>
-        <label className="myCheckbox">
-          <input
-            className="checkbox"
-            name="forChild"
-            type="checkbox"
-            checked={this.state.forChild}
-            onChange={this.props.handleCheckboxChange}
-          />
-          <span className="checkbox-text">Services for Children</span>
-        </label>
+        <h3 className="pharm-header"> Locations </h3>
         {data.length > 0 ? (
           data.map(pharm => {
             return (
@@ -66,4 +56,4 @@ class List extends React.Component {
   }
 }
 
-export default List;
+export default Saved;

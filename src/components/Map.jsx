@@ -37,6 +37,7 @@ class Map extends React.Component {
           <p id={pharm.a}>
             <span className="italics">Vaccines for kids:</span> {pharm.children}
           </p>
+          <button onClick={this.props.saveItem} type="button"> Save </button>
         </div>
         <img
           id={pharm.a}
