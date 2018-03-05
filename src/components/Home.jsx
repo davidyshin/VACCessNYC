@@ -80,7 +80,17 @@ class Home extends React.Component {
     this.setState({
       clickedPin: e.target.id
     });
+    // let center = clicked
   };
+
+  listClicked = e => {
+    let clicked = this.state.data.find(el => el.a === e.target.id)
+    console.log(clicked.location.coordinates)
+    this.setState({
+      center: {lat: clicked.location.coordinates[1], lng: clicked.location.coordinates[0]}
+    })
+    // this.setState({})
+  }
   elseClick = e => {
     this.setState({
       clickedPin: ""
@@ -93,7 +103,7 @@ class Home extends React.Component {
       ? data
       : data.filter(pharm => pharm.children === "Yes");
     const { zip, message } = this.state;
-    const buttonText = zip ? "Search" : "See all pharmacies";
+    const buttonText = zip ? "Search" : "See all locations";
 
     if (this.state.data.length > 0) {
       return (
@@ -136,12 +146,14 @@ class Home extends React.Component {
               pinClick={this.pinClick}
               clickedPin={this.state.clickedPin}
               data={renderData}
+              center={this.state.center}
             />
 
             <List
               selectId={this.selectId}
               handleHover={this.handleHover}
               handleUnhover={this.handleUnhover}
+              listClicked={this.listClicked}
               clickedPin={this.state.clickedPin}
               handleCheckboxChange={this.handleCheckboxChange}
               data={renderData}
