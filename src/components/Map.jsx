@@ -11,15 +11,21 @@ class Map extends React.Component {
       zoom: 12,
       data: [],
       center: { lat: 40.737975, lng: -73.8801301 },
-      id: ""
+      id: "",
     };
   }
-
   // pins to render on map
   mapPin = ({ pharm }) => {
     return (
       <div className="pin-container">
-        <div className={pharm.a === this.props.hoveredId || this.props.clickedPin === pharm.a ? "pin-info" : "hidden"}>
+        <div
+          className={
+            pharm.a === this.props.hoveredId ||
+            this.props.clickedPin === pharm.a
+              ? "pin-info"
+              : "hidden"
+          }
+        >
           <h1 className="pin-pharm-facility-name">{pharm.facility_name}</h1>
           <p id={pharm.a}>
             <span className="italics">Address:</span>{" "}

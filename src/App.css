@@ -27,7 +27,7 @@ body {
 	background-color: #1B8895;
     color: white;
 	display: flex;
-	height: 15%;
+	height: 10vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -94,7 +94,6 @@ search bar, search button ---------- */
 
 .home-container > div{
     height: -webkit-fill-available;
-    background-color: pink;
     display: flex;
     flex-direction: column;
 }
@@ -109,7 +108,7 @@ search bar, search button ---------- */
 /* ---------- Map container: pin, affect of pin when hovered ----------*/
 .map-page {
   display: flex;
-  height: 600px;
+  height: 89vh;
   flex-direction: row-reverse;
 }
 
