@@ -19,6 +19,7 @@ class Home extends React.Component {
       hoveredId: "",
       clickedPin: "",
       center: "",
+      zoom: 12,
       forChild: false
     };
   }
@@ -80,7 +81,18 @@ class Home extends React.Component {
     this.setState({
       clickedPin: e.target.id
     });
+    // let center = clicked
   };
+
+  listClicked = e => {
+    let clicked = this.state.data.find(el => el.a === e.target.id)
+    console.log(clicked.location.coordinates)
+    this.setState({
+      center: {lat: clicked.location.coordinates[1], lng: clicked.location.coordinates[0]},
+      zoom: 14
+    })
+    // this.setState({})
+  }
   elseClick = e => {
     this.setState({
       clickedPin: ""
@@ -136,12 +148,15 @@ class Home extends React.Component {
               pinClick={this.pinClick}
               clickedPin={this.state.clickedPin}
               data={renderData}
+              center={this.state.center}
+              zoom={this.state.zoom}
             />
 
             <List
               selectId={this.selectId}
               handleHover={this.handleHover}
               handleUnhover={this.handleUnhover}
+              listClicked={this.listClicked}
               clickedPin={this.state.clickedPin}
               handleCheckboxChange={this.handleCheckboxChange}
               data={renderData}

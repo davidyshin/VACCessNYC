@@ -50,10 +50,6 @@ class Map extends React.Component {
   };
 
   renderPin = pin => {
-    console.log(
-      pin.location.coordinates[1].toString(),
-      pin.location.coordinates[0].toString()
-    );
     return (
       <this.mapPin
         pharm={pin}
@@ -76,7 +72,9 @@ class Map extends React.Component {
           }}
           onClick={this.props.elseClick}
           defaultCenter={this.state.center}
+          center={this.props.center}
           defaultZoom={this.state.zoom}
+          zoom={this.props.zoom}
         >
           {/*Map pins according to data here*/}
           {data.map(this.renderPin)}
