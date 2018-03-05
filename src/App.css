@@ -13,6 +13,8 @@ body {
     background-color: white;
     font-family: 'Open Sans', sans-serif;
     color: #1C374C;
+    margin: 0;
+    padding: 0;
 }
 
 .App {
