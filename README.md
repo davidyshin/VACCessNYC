@@ -6,15 +6,17 @@ Our app has been deployed - [Click here to check it out!](https://vaccessnyc.net
 
 Tired of catching the flu and missing precious days of work or school? Use **[V]ACCESS NYC** to discover the nearest location in New York City that administers the flu vaccine!
 
+<img src="./public/preview/home.png" width="800" height="600" />
+
 ## Features
-
 * Use an NYC zip code to view locations that administer the flu vaccine
-
-
 * View the location's name, address, and phone number
 * Filter by locations that offer services for children
 * Compare different locations on map view
 * Responsive design to accommodate smaller screen sizes
+
+<img src="./public/preview/preview.gif" width="800" height="600" />
+
 
 ## Technologies
 
