@@ -19,6 +19,7 @@ class Home extends React.Component {
       hoveredId: "",
       clickedPin: "",
       center: "",
+      zoom: 12,
       forChild: false
     };
   }
@@ -87,7 +88,8 @@ class Home extends React.Component {
     let clicked = this.state.data.find(el => el.a === e.target.id)
     console.log(clicked.location.coordinates)
     this.setState({
-      center: {lat: clicked.location.coordinates[1], lng: clicked.location.coordinates[0]}
+      center: {lat: clicked.location.coordinates[1], lng: clicked.location.coordinates[0]},
+      zoom: 14
     })
     // this.setState({})
   }
@@ -147,6 +149,7 @@ class Home extends React.Component {
               clickedPin={this.state.clickedPin}
               data={renderData}
               center={this.state.center}
+              zoom={this.state.zoom}
             />
 
             <List
