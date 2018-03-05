@@ -35,18 +35,32 @@ class List extends React.Component {
                 }
                 id={pharm.a}
               >
-                <h3 id={pharm.a}>{pharm.facility_name}</h3>
-                <ul id={pharm.a} className="pharm-list-info">
-                  <p id={pharm.a}>
-                    <span className="italics">Address:</span>{" "}
-                    <br />
-                    {pharm.address + ", " + pharm.borough + ", NY " + pharm.zip_code}
-                  </p>
-                </ul>
-              </li>
-            </ul>
-          );
-        }) : <p className="italics">Sorry, there are no locations in </br>this zip code that services children. :(</p>}
+                <li
+                  onMouseEnter={this.props.handleHover}
+                  onMouseLeave={this.props.handleUnhover}
+                  className="pharm-list-item"
+                  id={pharm.a}
+                >
+                  <h3 id={pharm.a}>{pharm.facility_name}</h3>
+                  <ul id={pharm.a} className="pharm-list-info">
+                    <p id={pharm.a}>
+                      <span className="italics">Address:</span> <br />
+                      {pharm.address +
+                        ", " +
+                        pharm.borough +
+                        ", NY " +
+                        pharm.zip_code}
+                    </p>
+                  </ul>
+                </li>
+              </ul>
+            );
+          })
+        ) : (
+          <p className="italics">
+            Sorry, there are no locations <br/>that service children. :(
+          </p>
+        )}
       </div>
     );
   }
