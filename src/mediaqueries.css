@@ -30,11 +30,12 @@
         justify-content: center;
     }
     .map-container {
-        height: 400px;
+        height: 100%;
         width: auto;
     }
     .location-list {
-        height: 400px;
+        height: 100%;
+        overflow: scroll;
         width: 35%;
     }
     body {
