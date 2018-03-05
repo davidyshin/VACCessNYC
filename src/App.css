@@ -96,6 +96,8 @@ search bar, search button ---------- */
     height: -webkit-fill-available;
     display: flex;
     flex-direction: column;
+    /* #ffec0794 */
+    background: linear-gradient(to bottom, white 0%, #ffec0794 300%);
 }
 
 .search-tool {

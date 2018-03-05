@@ -46,8 +46,7 @@ class List extends React.Component {
               </li>
             </ul>
           );
-        }) : <p className="italics">Sorry, there are no locations in this zip code that services children. :(</p>}
-
+        }) : <p className="italics">Sorry, there are no locations in </br>this zip code that services children. :(</p>}
       </div>
     );
   }
