@@ -37,17 +37,15 @@ class Home extends React.Component {
   }
 
   getLocation = e => {
-    navigator.geolocation.getCurrentPosition(position => {
-      axios
-        .get(
-          `https://data.cityofnewyork.us/resource/inaf-e6a5.json?$where=within_circle(location,${
-            this.state.userPosition.lat
-          },${this.state.userPosition.lng},1610)`
-        )
-        .then(res => {
-          this.setState({ data: res.data });
-        });
-    });
+    axios
+      .get(
+        `https://data.cityofnewyork.us/resource/inaf-e6a5.json?$where=within_circle(location,${
+          this.state.userPosition.lat
+        },${this.state.userPosition.lng},1610)`
+      )
+      .then(res => {
+        this.setState({ data: res.data });
+      });
   };
 
   handleCheckboxChange = e => {
