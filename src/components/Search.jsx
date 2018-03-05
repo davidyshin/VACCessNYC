@@ -4,7 +4,7 @@ import banner from "../images/banner.png";
 const Search = props => {
   return (
     <div>
-    <h2> Fight the Flu - Find a location today!</h2>
+    <h2> Fight the Flu - Find a service center today!</h2>
       <form onSubmit={props.zip ? props.handleZipCode : props.handleSubmit} className="search-tool">
         <input
           className="home-search"
