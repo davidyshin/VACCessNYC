@@ -58,7 +58,8 @@ class Home extends React.Component {
   };
   handleHover = e => {
     this.setState({
-      hoveredId: e.target.id
+      hoveredId: e.target.id,
+      clickedPin: ""
     });
   };
 
