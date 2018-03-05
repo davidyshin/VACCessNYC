@@ -12,6 +12,7 @@ Tired of catching the flu and missing precious days of work or school? Use **(V)
 * View the location's name, address, and phone number
 * Filter by locations that offer services for children
 * Compare different locations on map view
+* Responsive design to accommodate smaller screen sizes
 
 ## Technologies
 
