@@ -4,8 +4,11 @@ import banner from "../images/banner.png";
 const Search = props => {
   return (
     <div>
-    <h2> Fight the Flu - Find a service center today!</h2>
-      <form onSubmit={props.zip ? props.handleZipCode : props.handleSubmit} className="search-tool">
+      <h2> Fight the Flu - Find a service center today!</h2>
+      <form
+        onSubmit={props.zip ? props.handleZipCode : props.handleSubmit}
+        className="search-tool"
+      >
         <input
           className="home-search"
           type="search"
@@ -20,12 +23,13 @@ const Search = props => {
         >
           {props.buttonText}
         </button>
+        <br/>
       </form>
+      <button className="near-me-button"onClick={props.getLocation}>Find a location near me</button>
       <span className="home-message">{props.message}</span>
-      <img className="banner-image" src={banner}/>
+      <img className="banner-image" src={banner} />
     </div>
   );
 };
 
-
-export default Search
+export default Search;
