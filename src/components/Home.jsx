@@ -20,33 +20,18 @@ class Home extends React.Component {
       clickedPin: "",
       center: "",
       zoom: 12,
-      userPosition: {},
       forChild: false
     };
   }
-
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition(position =>
-      this.setState({
-        userPosition: {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        }
-      })
-    );
-  }
-
+  
   getLocation = e => {
-    axios
-      .get(
-        `https://data.cityofnewyork.us/resource/inaf-e6a5.json?$where=within_circle(location,${
-          this.state.userPosition.lat
-        },${this.state.userPosition.lng},1610)`
-      )
-      .then(res => {
-        this.setState({ data: res.data });
-      });
-  };
+    navigator.geolocation.getCurrentPosition((position) => {
+        axios.get(`https://data.cityofnewyork.us/resource/inaf-e6a5.json?$where=within_circle(location,${position.coords.latitude},${position.coords.longitude},1610)`)
+        .then(res=>{
+          this.setState({data: res.data})
+        })
+    });
+  }
 
   handleCheckboxChange = e => {
     this.setState({
@@ -110,18 +95,15 @@ class Home extends React.Component {
   };
 
   listClicked = e => {
-    let clicked = this.state.data.find(el => el.a === e.target.id);
-    console.log(clicked.location.coordinates);
+    let clicked = this.state.data.find(el => el.a === e.target.id)
+    console.log(clicked.location.coordinates)
     this.setState({
-      center: {
-        lat: clicked.location.coordinates[1],
-        lng: clicked.location.coordinates[0]
-      },
+      center: {lat: clicked.location.coordinates[1], lng: clicked.location.coordinates[0]},
       zoom: 14,
       clickedPin: e.target.id
-    });
+    })
     // this.setState({})
-  };
+  }
   elseClick = e => {
     this.setState({
       clickedPin: ""
