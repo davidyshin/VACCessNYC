@@ -90,7 +90,8 @@ class Home extends React.Component {
     console.log(clicked.location.coordinates)
     this.setState({
       center: {lat: clicked.location.coordinates[1], lng: clicked.location.coordinates[0]},
-      zoom: 14
+      zoom: 14,
+      clickedPin: e.target.id
     })
     // this.setState({})
   }
