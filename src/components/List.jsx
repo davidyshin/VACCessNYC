@@ -33,6 +33,7 @@ class List extends React.Component {
                     ? "pharm-list-selected"
                     : "pharm-list"
                 }
+                id={pharm.a}
               >
                 <li
                   onMouseEnter={this.props.handleHover}

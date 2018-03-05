@@ -74,6 +74,7 @@ class Map extends React.Component {
           defaultCenter={this.state.center}
           center={this.props.center}
           defaultZoom={this.state.zoom}
+          zoom={this.props.zoom}
         >
           {/*Map pins according to data here*/}
           {data.map(this.renderPin)}
