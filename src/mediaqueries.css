@@ -35,6 +35,7 @@
     }
     .location-list {
         height: 100%;
+        overflow: scroll;
         width: 35%;
     }
     body {
