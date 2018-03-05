@@ -29,3 +29,6 @@ Tired of catching the flu and missing precious days of work or school? Use **[V]
 * [David Shin](https://github.com/davidyshin)
 * [Carolina Restrepo](https://github.com/crestrepo12)
 * [Michelle Shang](https://github.com/michellelala)
+
+## Acknowledgements 
+* [Matthew Palmer](https://github.com/MattSPalmer)
