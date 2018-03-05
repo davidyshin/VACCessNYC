@@ -57,7 +57,7 @@ class List extends React.Component {
           })
         ) : (
           <p className="italics">
-            Sorry, there are no locations that service children. :(
+            Sorry, there are no locations <br/>that service children. :(
           </p>
         )}
       </div>
