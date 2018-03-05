@@ -2,9 +2,9 @@
 
 Our app has been deployed - [Click here to check it out!](https://vaccessnyc.netlify.com)
 
-# (V)ACCESS NYC
+# [V]ACCESS NYC
 
-Tired of catching the flu and missing precious days of work or school? Use **(V)ACCESS NYC** to discover the nearest location in New York City that administers the flu vaccine!
+Tired of catching the flu and missing precious days of work or school? Use **[V]ACCESS NYC** to discover the nearest location in New York City that administers the flu vaccine!
 
 ## Features
 
@@ -16,7 +16,7 @@ Tired of catching the flu and missing precious days of work or school? Use **(V)
 
 ## Technologies
 
-(V)ACCESS NYC was built using ReactJS and the following APIs:
+[V]ACCESS NYC was built using ReactJS and the following APIs:
 * [NYC OpenData](https://data.cityofnewyork.us/Health/New-York-City-Locations-Providing-Seasonal-Flu-Vac/w9ei-idxz)
 * [google-map-react package](https://www.npmjs.com/package/google-map-react)
 * [Google Maps](https://developers.google.com/maps/)
