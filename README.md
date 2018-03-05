@@ -9,6 +9,8 @@ Tired of catching the flu and missing precious days of work or school? Use **[V]
 ## Features
 
 * Use an NYC zip code to view locations that administer the flu vaccine
+
+
 * View the location's name, address, and phone number
 * Filter by locations that offer services for children
 * Compare different locations on map view

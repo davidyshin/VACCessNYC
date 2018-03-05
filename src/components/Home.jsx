@@ -23,6 +23,14 @@ class Home extends React.Component {
       forChild: false
     };
   }
+  getLocation = e => {
+    navigator.geolocation.getCurrentPosition((position) => {
+        axios.get(`https://data.cityofnewyork.us/resource/inaf-e6a5.json?$where=within_circle(location,${position.coords.latitude},${position.coords.longitude},1610)`)
+        .then(res=>{
+          this.setState({data: res.data})
+        })
+    });
+  }
 
   handleCheckboxChange = e => {
     this.setState({
@@ -177,6 +185,7 @@ class Home extends React.Component {
           <div className="home-container">
             <Search
               message={message}
+              getLocation={this.getLocation}
               buttonText={buttonText}
               zip={this.state.zip}
               handleInput={this.handleInput}

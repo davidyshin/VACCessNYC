@@ -90,13 +90,33 @@ search bar, search button ---------- */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.home-submit:hover, .map-submit:hover {
+.near-me-button {
+    display: absolute;
+    margin: 0 auto;
+    -webkit-appearance: none;
+    color: white;
+    font-weight: bold;
+    background-color: #1B8895;
+    border: #1B8895;
+    border-radius: 3px 3px;
+    font-size: 1.5em;
+	opacity: 1;
+	padding: 16px;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 250px;
+    bottom: 400px;
+}
+
+
+.home-submit:hover, .map-submit:hover,.near-me-button:hover {
     opacity: 0.6
 }
 
 .home-container > div{
     height: -webkit-fill-available;
     display: flex;
+
     flex-direction: column;
     /* #ffec0794 */
     background: linear-gradient(to bottom, white 0%, #ffec0794 300%);
